@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Zen+Kurenaido&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Basic Timers</title>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <div class="form__ign">
+                    <label for="ign">Client</label>
+                    <input
+                        type="text"
+                        name="ign"
+                        id="ign"
+                        maxlength="12"
+                        required
+                    />
+                </div>
+                <div class="form__map">
+                    <label for="map">Map</label>
+                    <input type="text" name="map" id="map" required />
+                </div>
+                <div class="form__channel">
+                    <label for="channel">Channel</label>
+                    <select name="channel" id="channel" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="form__hours">
+                    <label for="hours">Hours</label>
+                    <select name="hours" id="hours" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="form__paid">
+                    <label for="paid">Paid?</label>
+                    <input type="checkbox" name="paid" id="paid" />
+                </div>
+                <button>Add</button>
+            </form>
+            <!-- <div class="client">
+                <h2 class="client__name">IGN</h2>
+                <span class="client__channel">CH XX</span>
+                <span ></span>
+                <div class="timer"></div>
+            </div> -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Channel</th>
+                        <th>Client</th>
+                        <th>Map</th>
+                        <th>Time</th>
+                        <th>Paid</th>
+                        <th>Timer</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script src="js/main.js" type="module"></script>
+    </body>
+</html>

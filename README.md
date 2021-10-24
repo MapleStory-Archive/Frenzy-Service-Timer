@@ -6,7 +6,7 @@ Simple table of clients and timers for Frenzy Service in MapleStory
 
 Todo:
 
-- [ ] Use localStorage to save Client objects and preserve list in case of refreshes
+- [ ] Use localStorage to save Client objects and preserve list in case of refreshes (currently OMEGA scuffed)
 - [ ] Provide settings in case of 30 channels and toggle map from list
 - [ ] Global timer to keep track of casting every 9:30 minutes (variable)
 - [ ] Drag and drop for rearranging list vertically

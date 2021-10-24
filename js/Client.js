@@ -14,6 +14,13 @@ export default class Client {
 
         obj.append(this.el);
         new Timer(this.el.children[5].children[0], totalTime * 3600);
+
+        const deleteButton = this.el.children[5].children[1];
+
+        deleteButton.addEventListener("click", () => {
+            this.el.remove();
+            localStorage.removeItem(this.ign);
+        });
     }
 
     getHTML() {
@@ -23,7 +30,10 @@ export default class Client {
             <td>${this.map}</td>
             <td>${this.totalTime} hours</td>
             <td>${this.paidStatus.toString()}</td>
-            <td><div class="timer"></div></td>
+            <td>
+                <div class="timer"></div>
+                <button class="client__delete" type="button"><span class="material-icons">close</span></button>
+            </td>
         `;
     }
 }

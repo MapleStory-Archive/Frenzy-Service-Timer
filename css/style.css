@@ -213,3 +213,15 @@ form button:after {
     transform: translateY(-50%) translateX(50%);
     font-size: 1.75em;
 }
+
+.client__delete {
+    background: crimson;
+    border: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+}

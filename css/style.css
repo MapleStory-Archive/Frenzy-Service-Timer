@@ -160,9 +160,9 @@ form select {
     border-radius: 5px;
 }
 
-input,
-select,
-button {
+form input,
+form select,
+form button {
     cursor: pointer;
 }
 
@@ -180,7 +180,7 @@ form button {
     border: 2px solid white;
 }
 
-button:before {
+form button:before {
     background-color: #0075ff;
     content: "";
     display: block;
@@ -195,16 +195,16 @@ button:before {
     border-radius: 8px;
 }
 
-button:hover:before {
+form button:hover:before {
     top: 0;
 }
 
-button:hover {
+form button:hover {
     color: #fff;
     transition: 0.25s;
 }
 
-button:after {
+form button:after {
     position: absolute;
     right: 2.34375rem;
     top: 50%;

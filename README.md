@@ -1,4 +1,7 @@
 # Frenzy-Totem-Timer
+
+![](https://i.imgur.com/lRksgc8.png)
+
 Simple table of clients and timers for Frenzy Service in MapleStory
 
 Todo:
@@ -13,3 +16,7 @@ Todo:
 ... and a lot more.
 
 Feel free to drop additional suggestions on Discord at Benippo#9076
+
+Resources: 
+
+Timer Project - [dcode](https://www.youtube.com/watch?v=PIiMSMz7KzM)

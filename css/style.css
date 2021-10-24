@@ -45,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: opacity 300ms ease;
 }
 
 .timer__btn--start {
@@ -224,4 +225,10 @@ form button:after {
     border-radius: 8px;
     margin-top: 5px;
     cursor: pointer;
+    transition: opacity 300ms ease;
+}
+
+.timer__btn:hover,
+.client__delete:hover {
+    opacity: 0.75;
 }

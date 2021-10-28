@@ -1,4 +1,4 @@
-# Frenzy-Totem-Timer
+# Frenzy Service Timer
 
 ![](https://i.imgur.com/jkrzCAn.png)
 

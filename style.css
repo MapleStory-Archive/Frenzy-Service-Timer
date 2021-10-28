@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+body {
+    background: #222;
+    color: #fff;
+}
+
+.client {
+    background: #111;
+    padding: 0.3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 2rem;
+    height: 70px;
+}
+
+.client__form {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 150px 85px minmax(350px, auto);
+    justify-content: center;
+    gap: 1rem;
+    flex: 0 1 auto;
+}
+
+@media screen and (max-width: 970px) {
+    .client {
+        flex-direction: column;
+        height: auto;
+        gap: 0.6rem;
+    }
+    .client__controls {
+        width: 200px;
+    }
+    .client__controls button {
+        width: 200px;
+    }
+}
+
+.client__form input[name="name"],
+.client__form input[name="channel"] {
+    font-weight: 900;
+}
+
+.client__form__field {
+    width: 100%;
+}
+
+.client__form__field input {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: none;
+    border: 2px solid transparent;
+    text-align: center;
+    display: flex;
+    font-size: 16px;
+}
+
+.client__form__field input:focus {
+    outline: none;
+    border-bottom: 2px solid hsl(219, 64%, 64%);
+}
+
+.client__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client__controls button {
+    width: fit-content;
+    padding: 10px;
+    background: crimson;
+    border: none;
+    color: #ccc;
+    transition: 300ms color ease, 300ms background ease;
+    cursor: pointer;
+}
+
+.client__controls button:hover {
+    color: #fff;
+    background: hsl(348, 83%, 52%);
+}
+
+.container {
+    padding: 1rem;
+}
+
+.new-client-btn {
+    padding: 15px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: hsl(219, 64%, 64%);
+    color: #fff;
+    transition: background 300ms ease;
+    user-select: none;
+}
+
+.new-client-btn:hover {
+    background: rgb(138, 170, 229);
+}
+
+.controls {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.dragging {
+    opacity: 0.8;
+}
+
+/* Timer Styling */
+
+.client__timer {
+    /* height: 35px; */
+    width: 200px;
+    background: #222;
+    color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+}
+
+.timer__part {
+    font-size: 1.2rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.timer__text {
+    user-select: none;
+    margin-right: 5px;
+}
+
+.timer__btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    color: #fefefe;
+    background: #8208e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 300ms ease;
+}
+
+.timer__btn--start {
+    background: #00b84c;
+}
+
+.timer__btn--stop {
+    background: #ff0256;
+}
+
+button > .material-icons {
+    font-size: 14px;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}

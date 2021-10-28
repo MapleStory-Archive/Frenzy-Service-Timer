@@ -16,18 +16,19 @@ export default class Timer {
 
         this.el.control.addEventListener("click", () => {
             if (this.interval === null) {
-                this.start();
+                this.start(root);
             } else {
                 this.stop();
             }
         });
 
         this.el.reset.addEventListener("click", () => {
-            const inputHours = prompt("Enter Hours:");
-            if (inputHours) {
+            const inputMinutes = prompt("Enter Minutes:");
+            if (inputMinutes) {
                 this.stop();
-                this.remainingSeconds = inputHours * 3600;
+                this.remainingSeconds = inputMinutes * 60;
                 this.updateInterfaceTime();
+                root.parentElement.style.border = "none";
             }
         });
     }
@@ -54,7 +55,7 @@ export default class Timer {
         }
     }
 
-    start() {
+    start(root) {
         if (this.remainingSeconds === 0) return;
 
         this.interval = setInterval(() => {
@@ -63,6 +64,7 @@ export default class Timer {
 
             if (this.remainingSeconds === 0) {
                 this.stop();
+                root.parentElement.style.border = "thick solid crimson";
             }
         }, 1000);
 

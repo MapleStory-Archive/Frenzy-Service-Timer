@@ -7,6 +7,9 @@ const mapDatalist = document.querySelector("#map-list");
 
 addClientBtn.addEventListener("click", () => {
     const client = new Client(container, {});
+    client.element.addEventListener("dblclick", () => {
+        copyName(client.element);
+    });
 });
 
 container.addEventListener("dragover", (e) => {
@@ -39,3 +42,16 @@ function getDragAfterElement(container, y) {
 }
 
 mapDatalist.innerHTML = new MapleMaps().getMapOptions();
+
+function copyName(clientElement) {
+    const clientName = clientElement.querySelector('input[name="name"]');
+    navigator.clipboard.writeText(clientName.value);
+    clientName.classList.add("fade-out-in");
+    let revertName = clientName.value;
+    clientName.value = "Copied! 📋";
+    setTimeout(() => {
+        clientName.classList.remove("fade-out-in");
+        clientName.value = revertName;
+    }, 500);
+    console.log(clientName);
+}

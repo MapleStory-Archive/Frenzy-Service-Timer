@@ -174,3 +174,18 @@ button > .material-icons {
 input::-webkit-calendar-picker-indicator {
     opacity: 1;
 }
+
+.fade-out-in {
+    animation-name: text-fade-out-in;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+}
+
+@keyframes text-fade-out-in {
+    50% {
+        border-bottom: 2px solid rgb(255, 230, 0);
+    }
+    to {
+        border: 2px solid transparent;
+    }
+}

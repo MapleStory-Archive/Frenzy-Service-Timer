@@ -45,6 +45,7 @@ mapDatalist.innerHTML = new MapleMaps().getMapOptions();
 
 function copyName(clientElement) {
     const clientName = clientElement.querySelector('input[name="name"]');
+    if (!clientName.value) return;
     navigator.clipboard.writeText(clientName.value);
     clientName.classList.add("fade-out-in");
     let revertName = clientName.value;

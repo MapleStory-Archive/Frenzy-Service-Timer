@@ -18,6 +18,7 @@ body {
     margin-bottom: 1rem;
     gap: 2rem;
     height: 70px;
+    cursor: move;
 }
 
 .client__form {

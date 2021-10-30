@@ -1,12 +1,20 @@
 import Timer from "./Timer.js";
 
 export default class Client {
-    constructor(root, { name = "", map = "", channel = "" }) {
+    constructor(
+        root,
+        { name = "", map = "", channel = "", initSeconds = 3600 }
+    ) {
         this.name = name;
         this.map = map;
         this.channel = channel;
         this.parentElement = root;
         this.element = this.getElementHTML();
+        this.initSeconds = initSeconds;
+        this.timer = new Timer(
+            this.element.querySelector(".client__timer"),
+            initSeconds
+        );
         this.parentElement.append(this.element);
     }
 
@@ -54,8 +62,6 @@ export default class Client {
                 <button type="button">Delete</button>
             </div>
         `;
-
-        this.timer = new Timer(client.querySelector(".client__timer"));
 
         client
             .querySelector(".client__controls button")

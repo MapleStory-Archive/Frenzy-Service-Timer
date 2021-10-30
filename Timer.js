@@ -1,5 +1,5 @@
 export default class Timer {
-    constructor(root, seconds = 3600) {
+    constructor(root, seconds) {
         root.innerHTML = Timer.getHTML();
 
         this.el = {

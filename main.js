@@ -5,11 +5,18 @@ const container = document.querySelector(".client-container");
 const addClientBtn = document.querySelector(".new-client-btn");
 const mapDatalist = document.querySelector("#map-list");
 
+const { localStorage } = window;
+
+window.addEventListener("DOMContentLoaded", () => {
+    loadItems();
+    setInterval(() => {
+        saveItems();
+    }, 5000);
+});
+
 addClientBtn.addEventListener("click", () => {
+    // Client constructor args = (root, {name, map, channnel, timer seconds})
     const client = new Client(container, {});
-    client.element.addEventListener("dblclick", () => {
-        copyName(client.element);
-    });
 });
 
 container.addEventListener("dragover", (e) => {
@@ -55,4 +62,39 @@ function copyName(clientElement) {
         clientName.value = revertName;
     }, 500);
     console.log(clientName);
+}
+
+saveList.addEventListener("click", () => {
+    saveItems();
+});
+
+loadList.addEventListener("click", () => {
+    loadItems();
+});
+
+function saveItems() {
+    const clientNodes = container.querySelectorAll(".client");
+    const clientArray = Array.from(clientNodes);
+    let recentObject = [];
+    for (let client of clientArray) {
+        const clientInputs = [...client.querySelectorAll("input")];
+        let clientObj = {};
+        for (let input of clientInputs) {
+            clientObj[input.name] = input.value;
+        }
+        recentObject.push(clientObj);
+        console.log(clientObj);
+    }
+    localStorage.setItem(".recent", JSON.stringify(recentObject));
+}
+
+function loadItems() {
+    const recentItems = JSON.parse(localStorage.getItem(".recent"));
+    for (let itemObject of recentItems) {
+        const { name, map, channel } = itemObject;
+        const client = new Client(container, { name, map, channel });
+        client.element.addEventListener("dblclick", () => {
+            copyName(client.element);
+        });
+    }
 }

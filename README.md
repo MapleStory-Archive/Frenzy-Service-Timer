@@ -9,8 +9,8 @@ Todo:
 -   [x] Drag and drop for rearranging list vertically
 -   [x] Signal finished clients
 -   [x] Copy name on double click
+-   [x] Use localStorage to save Client objects and preserve list in case of refreshes
 -   [ ] Counter for number of clients
--   [ ] Use localStorage to save Client objects and preserve list in case of refreshes
 -   [ ] Map field toggle (for the ones who go by channel and in game names only)
 -   [ ] Global timer to keep track of casting every 9:30 minutes (variable)
 -   [ ] Clean up CSS

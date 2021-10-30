@@ -17,6 +17,9 @@ window.addEventListener("DOMContentLoaded", () => {
 addClientBtn.addEventListener("click", () => {
     // Client constructor args = (root, {name, map, channnel, timer seconds})
     const client = new Client(container, {});
+    client.element.addEventListener("dblclick", () => {
+        copyName(client.element);
+    });
 });
 
 container.addEventListener("dragover", (e) => {
@@ -64,14 +67,6 @@ function copyName(clientElement) {
     console.log(clientName);
 }
 
-saveList.addEventListener("click", () => {
-    saveItems();
-});
-
-loadList.addEventListener("click", () => {
-    loadItems();
-});
-
 function saveItems() {
     const clientNodes = container.querySelectorAll(".client");
     const clientArray = Array.from(clientNodes);
@@ -90,6 +85,7 @@ function saveItems() {
 
 function loadItems() {
     const recentItems = JSON.parse(localStorage.getItem(".recent"));
+    if (!recentItems) return;
     for (let itemObject of recentItems) {
         const { name, map, channel } = itemObject;
         const client = new Client(container, { name, map, channel });

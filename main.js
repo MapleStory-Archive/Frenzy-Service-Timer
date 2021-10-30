@@ -78,7 +78,6 @@ function saveItems() {
             clientObj[input.name] = input.value;
         }
         recentObject.push(clientObj);
-        console.log(clientObj);
     }
     localStorage.setItem(".recent", JSON.stringify(recentObject));
 }
